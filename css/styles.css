@@ -525,6 +525,56 @@ section {
   background-color: var(--btn-background-color);
   color: var(--btn-text-color);
 }
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(50%, 0) scale(0);
+}
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 6px;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /*--------------------------PORTFOLIO--------------------- */
 .border {
   border-bottom: 1px solid #ececec;
@@ -589,6 +639,29 @@ section {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.potfolio-top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-list-item:hover .potfolio-overley {
+  transform: translateY(0);
+}
+.potfolio-overley {
+  position: absolute;
+  top: 0;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-img {
   padding: 24px 20px;
   border: 1px solid #eeeeee;
@@ -607,30 +680,4 @@ section {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--text-color);
-}
-
-.overley > img {
-  position: relative;
-  /* overflow: hidden; */
-}
-
-.portfolio-list-item:hover .portfolio-overley {
-  font-size: 18px;
-  line-height: 1.56;
-  letter-spacing: 0.03em;
-  text-align: center;
-  color: #ffffff;
-  background: rgba(33, 150, 243, 0.9);
-  transform: translateY(0);
-  transition: transform 250ms;
-}
-
-.potfolio-overley {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  /* top: 0; */
-  padding: 63px 24px;
-  transform: translateY(100%);
 }
