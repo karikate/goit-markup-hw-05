@@ -57,7 +57,7 @@
     <main>
       <section class="hero">
         <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-        <button type="button" class="hero-btn" data-modal-open>Заказать услугу</button>
+        <button type="button" class="btn" data-modal-open>Заказать услугу</button>
       </section>
       <section class="about">
         <div class="container">
@@ -358,7 +358,7 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <div class="adress">
+        <div class="address">
           <a href="./index.html" lang="en" class="logo">
             <span class="logo-web">Web</span><span class="logo-studio-footer">Studio</span></a
           >
@@ -377,7 +377,7 @@
           </address>
         </div>
         <div class="join">
-          <h3 class="join-header">присоединяйтесь</h3>
+          <h2 class="join-header">присоединяйтесь</h2>
           <ul class="join-soc-list list">
             <li class="join-soc-item">
               <a href="" class="join-soc-link link">
@@ -409,6 +409,21 @@
             </li>
           </ul>
         </div>
+        <div class="subscribe">
+          <h2 class="subscribe-header">Подпишитесь на рассылку</h2>
+          <div class="subscribe-wrap">
+          <form class="footer-modal">
+            <label>
+                <input type="mail" class="input-footer" placeholder="E-mail">
+            </label>
+          </form>
+          <button type="button" class="btn">Подписаться
+            <svg class="footer-modal-icon" width="24" height="24">
+              <use href="./images/icon/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </div>
+        </div>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -418,8 +433,55 @@
             <use href="./images/icon/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <p class="modal-header">
+          Оставьте свои данные, мы вам перезвоним
+        </p>
+        <form class="modal-form">
+          <div class="modal-field">
+          <label class="modal-label" for="username">Имя</label>
+          <div class="input-wrap">
+             <input type="text" class="modal-input" name="username" id="username" required>
+              <svg class="input-icon" width="18" height="18">
+              <use href="./images/icon/icons.svg#icon-person"></use>
+            </svg>
+          </div>
+          </div>
+        <div class="modal-field">
+          <label class="modal-label" for="user-tel">Телефон</label>
+              <div class="input-wrap">
+            <input type="tel" class="modal-input" name="phone-number" id="user-tel" required>
+                <svg class="input-icon" width="18" height="18">
+              <use href="./images/icon/icons.svg#icon-phone"></use>
+            </svg>
+              </div>
+            </div>
+            <div class="modal-field">
+          <label class="modal-label" for="user-mail">Почта</label>
+          <div class="input-wrap">
+            <input type="mail" class="modal-input" name="mail" id="user-mail" required>
+            <svg class="input-icon" width="18" height="18">
+              <use href="./images/icon/icons.svg#icon-email"></use>
+            </svg>
+          </div>
+          </div>
+          <div class="modal-field">
+          <label class="modal-label" for="coment">Комментарий</label>
+            <textarea class="modal-coment" name="comemt" id="coment" placeholder="Введите текст"></textarea>
+          
+        </div>
+        <div class="modal-field check-wrap">
+          <input type="checkbox" name="privacy" id="privacy" class="input-check visually-hidden" required>
+          <label for="privacy" class="check-text">
+            <span>
+            <svg class="check-icon" width="16" height="15">
+              <use href="./images/icon/icons.svg#icon-check"></use>
+            </svg>
+          </span>Соглашаюсь с рассылкой и принимаю &nbsp; <a href="">Условия договора</a></label>
+        </div>
+          <button type="submit" class="btn modal-btn-send">Отправить</button>
+         </form>
       </div>
-    </div>
+      </div>
 
     <script src="./js/modal.js"></script>
   </body>
